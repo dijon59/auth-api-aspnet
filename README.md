@@ -22,7 +22,7 @@ The following are the tools required to start the project
    ```
 
 2. **Access the application**:
-   - Frontend: http://localhost:3000 -> Make sure you run the frontend, NB Frontend does not run in the same container. It is separate. 
+   Make sure you run the frontend, NB Frontend does not run in the same container. It is separate. you will have to install frontend repo and run it.(Check frontend readme to run the project)
    - Backend API: http://localhost:5054
 
 
