@@ -111,7 +111,6 @@ public class AuthController : ControllerBase
             {
                 return Unauthorized(new { message = "Invalid email or password" });
             }
-
         }
 
         catch (Exception e)
@@ -127,7 +126,7 @@ public class AuthController : ControllerBase
     {
         try
         {
-            // Get user Id from Claims 
+            // Get user Id from Claims
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
 
             // check if user exist

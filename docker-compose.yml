@@ -1,0 +1,30 @@
+
+
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: backendapi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./
+    container_name: api
+    restart: always
+    ports:
+      - "5054:8080"
+    depends_on:
+      - postgres
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=backendapi;Username=postgres;Password=postgres123
+
+volumes:
+  postgres_data:
